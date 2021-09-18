@@ -14,7 +14,8 @@ export default class Application extends EventEmitter {
   }
   init() {
     let article1 = document.querySelector(".article");
-    function animate() {
+
+    article1.addEventListener("click", () => {
       anime({
         targets: ".article",
         translateX: 250,
@@ -22,7 +23,6 @@ export default class Application extends EventEmitter {
         loop: true,
         easing: "spring(1, 80, 10, 0)",
       });
-    }
-    article1.addEventListener("click", animate);
+    });
   }
 }
